@@ -1,0 +1,537 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+img {
+  display: block;
+}
+
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  background-color: #f6f5f0;
+  border-bottom: solid 1px #c8c8c8;
+  z-index: 10;
+}
+
+header .header_box {
+  display: flex;
+  justify-content: space-between; /* 양 끝으로 배치 */
+  align-items: center; /* 세로 중앙 정렬 */
+  height: 120px; /* 헤더 높이 설정 */
+  width: 1100px;
+  margin: 0 auto;
+}
+
+header .logo {
+  display: flex;
+  align-items: center; /* 로고 세로 중앙 정렬 */
+}
+
+header .menu_container {
+  display: flex;
+  flex-direction: column; /* 위-아래 배치 */
+  justify-content: space-between;
+  align-items: flex-end; /* 오른쪽 정렬 */
+  height: 120px;
+}
+
+header .menu_container .sub_menu {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* 각 메뉴 간격 */
+  font-size: 13px;
+  margin-top: 15px;
+}
+header .menu_container .sub_menu li:not(:last-child)::after {
+  content: "|"; /* 메뉴 사이 구분선 */
+  margin-left: 10px;
+  color: #ccc;
+}
+header .menu_container .sub_menu li a {
+  color: gray;
+}
+header .menu_container .sub_menu li a:hover {
+  color: black;
+}
+header .menu_container .sub_menu input {
+  width: 30px;
+  height: 30px;
+  padding: 5px 10px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  border-radius: 5px;
+  outline: none;
+  transition: width 0.5s;
+}
+header .menu_container .sub_menu input:focus {
+  width: 180px;
+  border-color: green;
+}
+
+header .main_menu {
+  display: flex;
+}
+header .main_menu .menu_name {
+  padding: 10px 20px 33px 20px;
+  font-size: 14px;
+}
+header .main_menu .menu:hover .menu_name {
+  background-color: rgb(54, 52, 52);
+  color: rgb(10, 130, 10);
+  border-radius: 7px 7px 0 0;
+}
+header .main_menu .menu .menu_box {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  display: none;
+}
+header .main_menu .menu:hover .menu_box {
+  display: block;
+}
+header .main_menu .menu .menu_box .box_menu {
+  background-color: rgb(54, 52, 52);
+}
+header .main_menu .menu .menu_box .box_menu > ul {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  padding: 20px 0;
+}
+header .main_menu .menu .menu_box .box_menu > ul > li {
+  width: 200px;
+}
+header .main_menu .menu .menu_box .box_menu > ul > li h5 {
+  padding: 5px 0 15px 0;
+  color: white;
+}
+header .main_menu .menu .menu_box .box_menu > ul > li ul li {
+  padding: 5px 0;
+  font-size: 12px;
+  color: rgb(173, 167, 167);
+  cursor: pointer;
+}
+header .main_menu .menu .menu_box .box_menu > ul > li ul li:hover {
+  color: rgb(10, 130, 10);
+}
+header .main_menu .menu .menu_box .box_text {
+  padding: 25px 0;
+  font-size: 12px;
+  background-image: url(./images/main_menu_pattern.jpg);
+}
+header .main_menu .menu .menu_box .box_text > div {
+  width: 1100px;
+  margin: 0 auto;
+}
+header .main_menu .menu .menu_box .box_text h4 {
+  color: darkgray;
+}
+header .main_menu .menu .menu_box .box_text p {
+  color: rgb(10, 130, 10);
+  padding: 5px 0 15px;
+}
+
+/*경계*/
+
+.first {
+  margin-top: 120px;
+  background-image: url(./images/visual_bg.jpg);
+  background-position: center;
+}
+
+.first > div {
+  height: 646px;
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.first .title {
+  position: absolute;
+  top: 85px;
+}
+.first .title .title_btn {
+  position: absolute;
+  top: 260px;
+  left: 170px;
+  width: 100px;
+  padding: 10px;
+  color: rgb(94, 30, 30);
+  border: solid 2px rgb(94, 30, 30);
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.first .title .title_btn:hover {
+  color: white;
+  background-color: rgb(94, 30, 30);
+}
+
+.first .cup1 {
+  position: absolute;
+  top: 65px;
+  right: -45px;
+}
+.first .cup1 .cup1_text {
+  position: absolute;
+  top: -30px;
+  left: -120px;
+}
+
+.first .cup2 {
+  position: absolute;
+  bottom: 0px;
+  right: 160px;
+}
+.first .cup2 .cup2_text {
+  position: absolute;
+  top: 180px;
+  left: -230px;
+}
+
+.first .spoon {
+  position: absolute;
+  bottom: 0px;
+  left: 280px;
+}
+
+.first div div {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+.first .title {
+  animation-delay: 0.5s;
+}
+.first .cup1 {
+  animation-delay: 1s;
+}
+.first .cup2 {
+  animation-delay: 1.5s;
+}
+.first .spoon {
+  animation-delay: 2s;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*경계*/
+
+.second {
+  display: flex;
+  height: 60px;
+}
+
+.second .second_left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 57%;
+  background-color: rgb(54, 52, 52);
+  color: white;
+}
+
+.second_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 43%;
+  background-color: #f6f5f0;
+}
+
+/*경계*/
+
+.third {
+  height: 690px;
+  background-color: #f6f5f0;
+  overflow: hidden;
+  position: relative;
+}
+
+.third .promotion_container {
+  width: 829px;
+  height: 553px;
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.third .promotion_container .promotion_slide {
+  /*여기가 움직임?*/
+  display: flex;
+  gap: 10px;
+  position: relative;
+  transition: transform 0.5s ease-in-out;
+}
+
+.third .promotion_container .promotion_slide .slide_box {
+  /*여기가 투명도?*/
+  position: relative;
+  transition: opacity 0.5s ease-in-out;
+}
+.third .promotion_container .promotion_slide .slide_box:not(.slide_active) {
+  opacity: 0.5;
+}
+.third .promotion_container .promotion_slide .slide_box .promotion_btn {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  padding: 10px;
+  color: black;
+  border: solid 2px black;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.third .promotion_container .promotion_slide .slide_box .promotion_btn:hover {
+  color: white;
+  background-color: rgb(54, 52, 52);
+}
+
+.third .btn_prev,
+.third .btn_next {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 45%;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.third .btn_prev:hover,
+.third .btn_next:hover {
+  color: white;
+  background-color: rgb(54, 52, 52);
+}
+.third .btn_prev {
+  left: 18%;
+}
+.third .btn_next {
+  right: 18%;
+}
+
+/*경계*/
+
+.fourth {
+  display: flex;
+}
+
+.fourth .f_image {
+  width: 1100px;
+  height: 241px;
+  background-image: url(./images/rewards.jpg);
+  position: relative;
+}
+.fourth .f_image .f_btnbox {
+  width: 250px;
+  position: absolute;
+  right: 0;
+  bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+}
+.fourth .f_image .f_btnbox .f_btn {
+  padding: 10px;
+  color: black;
+  border: solid 2px black;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.fourth .f_image .f_btnbox .f_btn:hover {
+  background-color: rgb(54, 52, 52);
+  color: white;
+}
+
+.fourth .f_image .f_btnbox .f_signup {
+  width: 100px;
+  margin-right: 10px;
+  background-color: rgb(54, 52, 52);
+  color: white;
+}
+.fourth .f_image .f_btnbox .f_signup:hover {
+  background-color: transparent;
+  color: black;
+}
+
+.fourth .f_image .f_btnbox .f_login {
+  width: 90px;
+}
+
+.fourth .f_image .f_btnbox .f_gift {
+  width: 224px;
+  margin-top: 15px;
+}
+
+.fourth .f_left {
+  width: 14%;
+  height: 241px;
+  background-color: #272727;
+}
+
+.fourth .f_right {
+  position: relative;
+  width: 14%;
+  height: 241px;
+  background-color: #d5c798;
+}
+
+/*경계*/
+
+.fifth {
+  background-image: url(./images/video_cover_pattern.png);
+  width: 100%;
+  height: 800px;
+}
+
+/*경계*/
+
+.sixth {
+  height: 400px;
+  background-image: url(./images/season_product_bg.jpg);
+}
+
+.sixth > div {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.sixth .s_imagebox {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+}
+
+.sixth .s_imagebox .s_text {
+  margin-bottom: 15px;
+}
+
+.sixth .s_imagebox .s_btn {
+  width: 110px;
+  padding: 10px;
+  color: black;
+  border: solid 2px black;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.sixth .s_imagebox .s_btn:hover {
+  background-color: rgb(54, 52, 52);
+  color: white;
+}
+/*버튼이 겹치는게 많아서 묶기 가능*/
+
+/*경계*/
+
+.seventh {
+  height: 400px;
+  background-image: url(./images/reserve_bg.jpg);
+}
+
+.seventh > div {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  position: relative;
+}
+
+.seventh .ss_logo {
+  position: absolute;
+  top: 100px;
+  left: 0;
+}
+
+.seventh .ss_imagebox {
+  position: absolute;
+  top: 120px;
+  left: 200px;
+}
+.seventh .ss_imagebox .ss_btn {
+  width: 110px;
+  padding: 10px;
+  color: burlywood;
+  border: solid 2px burlywood;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.seventh .ss_imagebox .ss_btn:hover {
+  background-color: burlywood;
+  color: white;
+}
+
+.seventh .ss_image {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+/*경계*/
+
+.eighth {
+  height: 828px;
+  background-image: url(./images/favorite_bg.jpg);
+}
+
+.eighth > div {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.eighth .e_btn {
+  width: 110px;
+  padding: 10px;
+  color: white;
+  border: solid 2px white;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.eighth .e_btn:hover {
+  background-color: white;
+  color: black;
+}
