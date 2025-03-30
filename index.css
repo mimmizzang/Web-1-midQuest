@@ -141,6 +141,29 @@ header .main_menu .menu .menu_box .box_text p {
 
 /*경계*/
 
+#badge_box {
+  position: fixed;
+  top: 130px;
+  right: 10px;
+  z-index: 9;
+}
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: 1s ease-in-out;
+}
+#badge_box .badge {
+  border-radius: 6%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#badge_box .badge:last-child {
+  margin-bottom: 0;
+}
+
+/*경계*/
+
 .first {
   margin-top: 120px;
   background-image: url(./images/visual_bg.jpg);
@@ -601,4 +624,213 @@ header .main_menu .menu .menu_box .box_text p {
   height: 400px;
   margin: 0 auto;
   position: relative;
+}
+
+.tenth .t_texture1 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tenth .t_texture2 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.tenth .t_picture1 {
+  position: absolute;
+  left: 0;
+  top: -50px;
+  border-radius: 50%;
+}
+
+.tenth .t_picture2 {
+  position: absolute;
+  left: 250px;
+  top: 150px;
+  border-radius: 50%;
+}
+
+.tenth .t_imagebox {
+  position: absolute;
+  top: 120px;
+  right: 170px;
+}
+
+.tenth .t_imagebox .t_text {
+  margin-bottom: 20px;
+}
+
+.tenth .t_imagebox .t_btn {
+  width: 100px;
+  padding: 10px;
+  color: black;
+  border: solid 2px black;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+.tenth .t_imagebox .t_btn:hover {
+  background-color: black;
+  color: white;
+}
+
+/*경계*/
+
+.eleventh {
+  background-color: #272727;
+}
+
+.eleventh > div {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 40px 0;
+}
+
+.eleventh .awards_container {
+  overflow: hidden;
+}
+
+.eleventh .awards_container .awards_slide {
+  display: flex;
+  gap: 30px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.eleventh .btn_prev,
+.eleventh .btn_next {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 30%;
+  color: gray;
+  border: 2px solid gray;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.eleventh .btn_prev:hover,
+.eleventh .btn_next:hover {
+  color: black;
+  background-color: gray;
+}
+.eleventh .btn_prev {
+  left: -10%;
+}
+.eleventh .btn_next {
+  right: -10%;
+}
+
+/*경계*/
+
+footer {
+  background-color: #272727;
+  border-top: 1px solid rgb(81, 81, 81);
+}
+
+footer > div {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+  padding: 50px 0;
+}
+
+footer .footer_menu {
+  display: flex;
+  justify-content: center;
+  gap: 25px; /* 각 메뉴 간격 */
+  font-size: 12px;
+  font-weight: bold;
+}
+footer .footer_menu li {
+  position: relative;
+}
+footer .footer_menu li:not(:last-child)::after {
+  content: ""; /* 메뉴 사이 구분선 */
+  background-color: gray;
+  position: absolute;
+  top: 6px;
+  right: -13px;
+  width: 2px;
+  height: 2px;
+}
+footer .footer_menu li a {
+  color: #ccc;
+}
+footer .footer_menu li .footer_g {
+  color: green;
+}
+
+footer .footer_btnbox {
+  display: flex;
+  justify-content: center;
+  margin-top: 35px;
+  gap: 10px;
+}
+footer .footer_btnbox .footer_btn {
+  width: 100px;
+  padding: 10px;
+  color: white;
+  border: solid 2px white;
+  border-radius: 5px;
+  font-size: 12px;
+  font-weight: bold;
+  transition: 0.5s;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+}
+footer .footer_btnbox .footer_btn:hover {
+  background-color: white;
+  color: black;
+}
+
+footer .footer_text1 {
+  margin-top: 30px;
+  text-align: center;
+}
+footer .footer_text1 span {
+  font-size: 12px;
+  color: gray;
+  margin-right: 25px;
+}
+footer .footer_text1 span:last-child {
+  margin-right: 0;
+}
+
+footer .footer_text2 {
+  margin-top: 15px;
+  text-align: center;
+}
+footer .footer_text2 span {
+  font-size: 12px;
+  color: gray;
+}
+
+footer .footer_img {
+  margin: 30px auto 0;
+}
+
+/*경계*/
+
+#scroll_top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 20%;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
 }
