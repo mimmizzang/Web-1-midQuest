@@ -77,6 +77,7 @@ header .menu_container .sub_menu input:focus {
 }
 
 header .main_menu {
+  z-index: 1;
   display: flex;
 }
 header .main_menu .menu_name {
@@ -145,7 +146,7 @@ header .main_menu .menu .menu_box .box_text p {
   position: fixed;
   top: 130px;
   right: 10px;
-  z-index: 9;
+  z-index: 10;
 }
 .hidden {
   opacity: 0;
@@ -271,6 +272,21 @@ header .main_menu .menu .menu_box .box_text p {
   color: white;
 }
 
+.second .second_left .swiper {
+  height: 60px;
+  margin-left: 20px;
+  margin-right: 0;
+}
+
+.second .second_left .swiper .swiper-wrapper .swiper-slide {
+  height: 60px;
+  display: flex;
+  align-items: center;
+}
+.second .second_left .swiper .swiper-wrapper .swiper-slide a {
+  color: white;
+}
+
 .second_right {
   display: flex;
   align-items: center;
@@ -288,8 +304,8 @@ header .main_menu .menu .menu_box .box_text p {
   position: relative;
 }
 
-.third .promotion_container {
-  width: 829px;
+.third .swiper {
+  width: 2477px;
   height: 553px;
   position: absolute;
   top: 40px;
@@ -297,23 +313,15 @@ header .main_menu .menu .menu_box .box_text p {
   transform: translateX(-50%);
 }
 
-.third .promotion_container .promotion_slide {
-  /*여기가 움직임?*/
-  display: flex;
-  gap: 10px;
+.third .swiper .swiper-wrapper .swiper-slide {
   position: relative;
-  transition: transform 0.5s ease-in-out;
-}
-
-.third .promotion_container .promotion_slide .slide_box {
-  /*여기가 투명도?*/
-  position: relative;
+  opacity: 0.5;
   transition: opacity 0.5s ease-in-out;
 }
-.third .promotion_container .promotion_slide .slide_box:not(.slide_active) {
-  opacity: 0.5;
+.third .swiper .swiper-wrapper .swiper-slide-active {
+  opacity: 1;
 }
-.third .promotion_container .promotion_slide .slide_box .promotion_btn {
+.third .swiper .swiper-wrapper .swiper-slide .promotion_btn {
   position: absolute;
   bottom: 0;
   left: 50%;
@@ -330,32 +338,54 @@ header .main_menu .menu .menu_box .box_text p {
   cursor: pointer;
   display: block;
 }
-.third .promotion_container .promotion_slide .slide_box .promotion_btn:hover {
+.third .swiper .swiper-wrapper .swiper-slide .promotion_btn:hover {
   color: white;
   background-color: rgb(54, 52, 52);
 }
 
-.third .btn_prev,
-.third .btn_next {
-  width: 50px;
-  height: 50px;
+.third .swiper-button-prev,
+.third .swiper-button-next {
+  width: 40px;
+  height: 40px;
   position: absolute;
   top: 45%;
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
   transition: 0.5s;
+  border: solid 2px black;
+  color: black;
+  z-index: 1;
 }
-.third .btn_prev:hover,
-.third .btn_next:hover {
+.third .swiper-button-prev::after,
+.third .swiper-button-next::after {
+  font-size: medium;
+  font-weight: bold;
+}
+.third .swiper-button-prev:hover,
+.third .swiper-button-next:hover {
   color: white;
   background-color: rgb(54, 52, 52);
 }
-.third .btn_prev {
+.third .swiper-button-prev {
   left: 18%;
 }
-.third .btn_next {
+.third .swiper-button-next {
   right: 18%;
+}
+
+.third .swiper-pagination.swiper-pagination-horizontal {
+  bottom: 40px;
+  z-index: 1;
+}
+.third .swiper-pagination .swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: transparent;
+  background-image: url(./images/promotion_slide_pager.png);
+}
+.third .swiper-pagination .swiper-pagination-bullet-active {
+  background-image: url(./images/promotion_slide_pager_on.png);
 }
 
 /*경계*/
@@ -693,38 +723,33 @@ header .main_menu .menu .menu_box .box_text p {
   padding: 40px 0;
 }
 
-.eleventh .awards_container {
-  overflow: hidden;
-}
-
-.eleventh .awards_container .awards_slide {
-  display: flex;
-  gap: 30px;
-  transition: transform 0.5s ease-in-out;
-}
-
-.eleventh .btn_prev,
-.eleventh .btn_next {
-  width: 50px;
-  height: 50px;
+.eleventh .swiper-button-prev,
+.eleventh .swiper-button-next {
+  width: 40px;
+  height: 40px;
   position: absolute;
-  top: 30%;
-  color: gray;
-  border: 2px solid gray;
+  top: 50%;
   border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
   transition: 0.5s;
+  border: 2px solid gray;
+  color: gray;
 }
-.eleventh .btn_prev:hover,
-.eleventh .btn_next:hover {
+.eleventh .swiper-button-prev::after,
+.eleventh .swiper-button-next::after {
+  font-size: medium;
+  font-weight: bold;
+}
+.eleventh .swiper-button-prev:hover,
+.eleventh .swiper-button-next:hover {
   color: black;
   background-color: gray;
 }
-.eleventh .btn_prev {
+.eleventh .swiper-button-prev {
   left: -10%;
 }
-.eleventh .btn_next {
+.eleventh .swiper-button-next {
   right: -10%;
 }
 
@@ -833,4 +858,5 @@ footer .footer_img {
   font-size: 20px;
   cursor: pointer;
   display: none;
+  z-index: 10;
 }
