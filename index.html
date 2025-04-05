@@ -7,9 +7,16 @@
     <link rel="icon" type="image/png" href="./favicon.png" />
     <title>Startbucks Coffee Korea</title>
 
-    <script defer src="./index.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script defer src="./index.js"></script>
   </head>
   <body>
     <header>
@@ -382,7 +389,24 @@
     <section class="second">
       <div class="second_left">
         <h4>공지사항</h4>
-        <div></div>
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <a href=""
+                >크리스마스 & 연말연시 스타벅스 매장 영업시간 변경 안내</a
+              >
+            </div>
+            <div class="swiper-slide">
+              <a href="">[당첨자 발표] 2021 스타벅스 플래너 영수증 이벤트</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="">스타벅스커피 코리아 애플리케이션 버전 업데이트 안내</a>
+            </div>
+            <div class="swiper-slide">
+              <a href="">[당첨자 발표] 뉴이어 전자영수증 이벤트</a>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="second_right">
         <h4>스타벅스 프로모션</h4>
@@ -393,36 +417,36 @@
 
     <section class="third">
       <!--사진-->
-      <div class="promotion_container">
-        <div class="promotion_slide">
-          <div class="slide_box">
-            <img src="./images/promotion_slide4.jpg" alt="" />
-            <a href="" class="promotion_btn">자세히 보기</a>
-          </div>
-          <div class="slide_box">
-            <img src="./images/promotion_slide5.jpg" alt="" />
-            <a href="" class="promotion_btn">자세히 보기</a>
-          </div>
-          <div class="slide_box slide_active">
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide_active">
             <img src="./images/promotion_slide1.jpg" alt="" />
             <a href="" class="promotion_btn">자세히 보기</a>
           </div>
-          <div class="slide_box">
+          <div class="swiper-slide">
             <img src="./images/promotion_slide2.jpg" alt="" />
             <a href="" class="promotion_btn">자세히 보기</a>
           </div>
-          <div class="slide_box">
+          <div class="swiper-slide">
             <img src="./images/promotion_slide3.jpg" alt="" />
+            <a href="" class="promotion_btn">자세히 보기</a>
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/promotion_slide4.jpg" alt="" />
+            <a href="" class="promotion_btn">자세히 보기</a>
+          </div>
+          <div class="swiper-slide">
+            <img src="./images/promotion_slide5.jpg" alt="" />
             <a href="" class="promotion_btn">자세히 보기</a>
           </div>
         </div>
       </div>
       <!--화살표-->
-      <button class="btn_prev" onclick="prevSlide()">&#10094;</button>
+      <div class="swiper-button-prev"></div>
       <!--화살표-->
-      <button class="btn_next" onclick="nextSlide()">&#10095;</button>
+      <div class="swiper-button-next"></div>
       <!--진행 점-->
-      <div></div>
+      <div class="swiper-pagination"></div>
     </section>
 
     <!--경계-->
@@ -522,44 +546,44 @@
 
     <section class="eleventh">
       <div>
-        <div class="awards_container">
-          <div class="awards_slide">
-            <div class="awards_box">
+        <div class="swiper mySwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
               <img src="./images/awards_slide1.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide2.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide3.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide4.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide5.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide6.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide7.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide8.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide9.jpg" alt="" />
             </div>
-            <div class="awards_box">
+            <div class="swiper-slide">
               <img src="./images/awards_slide10.jpg" alt="" />
             </div>
           </div>
         </div>
         <!--화살표-->
-        <button class="btn_prev" onclick="">&#10094;</button>
+        <div class="swiper-button-prev"></div>
         <!--화살표-->
-        <button class="btn_next" onclick="">&#10095;</button>
+        <div class="swiper-button-next"></div>
       </div>
     </section>
 

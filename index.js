@@ -1,33 +1,49 @@
-// slide
+// 공지 slide
 
-let currentIndex = 2;
-const slides = document.querySelectorAll(".slide_box");
-const totalSlides = slides.length;
+var swiper1 = new Swiper(".second .mySwiper", {
+  direction: "vertical",
+  loop: true,
+  autoplay: {
+    delay: 3000,
+  },
+});
 
-function updateSlides() {
-  slides.forEach((slide, index) => {
-    slide.classList.remove("slide_active");
-    slide.style.opacity = index === currentIndex ? "1" : "0.5";
-  });
+// promotion slide
 
-  const slider = document.querySelector(".promotion_slide");
-  slider.style.transform = `translateX(-${currentIndex * 100}%)`;
-  slides[currentIndex].classList.add("slide_active");
-}
+var swiper2 = new Swiper(".third .mySwiper", {
+  slidesPerView: 3,
+  spaceBetween: 10,
+  centeredSlides: true,
+  loop: true,
+  pagination: {
+    el: ".third .swiper-pagination",
+    clickable: true,
+  },
+  navigation: {
+    nextEl: ".third .swiper-button-next",
+    prevEl: ".third .swiper-button-prev",
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true, // 사용자가 조작하면 자동 재생 정지
+  },
+});
 
-function prevSlide() {
-  currentIndex = currentIndex === 0 ? totalSlides - 1 : currentIndex - 1;
-  updateSlides();
-}
+// awards slide
 
-function nextSlide() {
-  currentIndex = currentIndex === totalSlides - 1 ? 0 : currentIndex + 1;
-  updateSlides();
-}
-
-updateSlides(); // 초기화
-
-// slide2
+var swiper3 = new Swiper(".eleventh .mySwiper", {
+  slidesPerView: 5,
+  spaceBetween: 30,
+  loop: true,
+  navigation: {
+    nextEl: ".eleventh .swiper-button-next",
+    prevEl: ".eleventh .swiper-button-prev",
+  },
+  autoplay: {
+    delay: 3000,
+    disableOnInteraction: true,
+  },
+});
 
 // gsap
 
