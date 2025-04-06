@@ -147,11 +147,11 @@ header .main_menu .menu .menu_box .box_text p {
   top: 130px;
   right: 10px;
   z-index: 10;
+  transition: 1s ease-in-out;
 }
 .hidden {
   opacity: 0;
   visibility: hidden;
-  transition: 1s ease-in-out;
 }
 #badge_box .badge {
   border-radius: 6%;
@@ -462,8 +462,31 @@ header .main_menu .menu .menu_box .box_text p {
 
 .fifth {
   background-image: url(./images/video_cover_pattern.png);
-  width: 100%;
   height: 800px;
+}
+
+.fifth > div {
+  width: 1100px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.fifth .floating1 {
+  position: absolute;
+  top: 60px;
+}
+
+.fifth .floating2 {
+  position: absolute;
+  top: 380px;
+  left: 150px;
+}
+
+.fifth .floating3 {
+  position: absolute;
+  right: 0;
+  bottom: -100px;
 }
 
 /*경계*/
@@ -498,11 +521,11 @@ header .main_menu .menu .menu_box .box_text p {
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
-  transition: 0.5s;
   text-align: center;
   cursor: pointer;
   display: block;
 }
+/*transition 하면 gsap적용 했을때 왜 다 안 나오는지?*/
 .sixth .s_imagebox .s_btn:hover {
   background-color: rgb(54, 52, 52);
   color: white;
@@ -542,7 +565,6 @@ header .main_menu .menu .menu_box .box_text p {
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
-  transition: 0.5s;
   text-align: center;
   cursor: pointer;
   display: block;
@@ -595,7 +617,6 @@ header .main_menu .menu .menu_box .box_text p {
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
-  transition: 0.5s;
   text-align: center;
   cursor: pointer;
   display: block;
@@ -621,26 +642,51 @@ header .main_menu .menu .menu_box .box_text p {
   align-items: center;
 }
 
-.ninth .medal_front {
+.ninth .medal {
+  width: 334px;
+  height: 334px;
+  position: relative;
 }
 
-/*.ninth .medal_front:hover {
-  animation: rotate 0.5s ease-in forwards;
-}*/
-
-.ninth .medal_back {
-  display: none;
+.ninth .medal .medal_front,
+.ninth .medal .medal_back {
+  position: absolute;
+  transition: 1s;
+  backface-visibility: hidden; /*뒷면이 사용자를 향할 때 보여야 하는지 지정*/
 }
 
-/*@keyframes rotate {
-  from {
-    transform: rotateY(0deg);
-  }
-  to {
-    transform: rotateY(180deg);
-    display: none;
-  }
-}*/
+.ninth .medal:hover .medal_front {
+  transform: rotateY(180deg);
+}
+
+.ninth .medal .medal_back {
+  transform: rotateY(-180deg);
+}
+
+.ninth .medal:hover .medal_back {
+  transform: rotateY(0deg);
+}
+
+.ninth .medal .medal_back .medal_btn {
+  width: 100px;
+  padding: 10px;
+  color: black;
+  border: solid 2px black;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  bottom: 50px;
+  left: 100px;
+}
+
+.ninth .medal .medal_back .medal_btn:hover {
+  color: white;
+  background-color: black;
+}
 
 /*경계*/
 
@@ -700,7 +746,6 @@ header .main_menu .menu .menu_box .box_text p {
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
-  transition: 0.5s;
   text-align: center;
   cursor: pointer;
   display: block;
