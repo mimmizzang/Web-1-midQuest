@@ -147,12 +147,8 @@ header .main_menu .menu .menu_box .box_text p {
   top: 130px;
   right: 10px;
   z-index: 10;
-  transition: 1s ease-in-out;
 }
-.hidden {
-  opacity: 0;
-  visibility: hidden;
-}
+
 #badge_box .badge {
   border-radius: 6%;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
@@ -902,6 +898,5 @@ footer .footer_img {
   border-radius: 20%;
   font-size: 20px;
   cursor: pointer;
-  display: none;
   z-index: 10;
 }
