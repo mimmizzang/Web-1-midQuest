@@ -152,26 +152,25 @@ gsap.from(".tenth .right-img", {
 const scrollBadge = document.getElementById("badge_box");
 const scrollTopBtn = document.getElementById("scroll_top");
 
-window.onscroll = function () {
-  const scrollY = document.documentElement.scrollTop;
+ScrollTrigger.create({
+  start: "top -500", // 스크롤 500px 이상일 때 작동
+  onEnter: () => {
+    // 아래로 스크롤해서 조건 충족될 때 실행
+    gsap.to(scrollTopBtn, { duration: 0.5, x: 0 });
+    gsap.to(scrollBadge, { duration: 0.5, opacity: 0, display: "none" });
+  },
+  onLeaveBack: () => {
+    // 다시 위로 스크롤해서 조건 미충족일 때 실행
+    gsap.to(scrollTopBtn, { duration: 0.5, x: 100 });
+    gsap.to(scrollBadge, { duration: 0.5, opacity: 1, display: "block" });
+  },
+});
 
-  if (scrollY > 500) {
-    scrollTopBtn.style.display = "inline-block";
-    scrollBadge.classList.add("hidden");
-
-    /*setTimeout(() => {
-      if (scrollBadge.classList.contains("hidden")) {
-        scrollBadge.style.display = "none";
-      }
-    }, 1000);*/
-  } else {
-    scrollTopBtn.style.display = "none";
-    scrollBadge.classList.remove("hidden");
-    scrollBadge.style.display = "block";
-  }
-};
-
-// scroll_top 버튼 gsap
+/*  window.onscroll = function() + class or gsap 이용 가능
+    window.addEventListener("scroll", function()) + class or gsap 이용 가능
+    확장성이나 여러 이벤트를 다룰 땐 addEventListener가 더 좋음
+    그래서 실제로는 addEventListener 방식이 더 선호되긴 함
+*/
 
 // 누르면 맨 위로
 
