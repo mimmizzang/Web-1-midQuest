@@ -57,94 +57,33 @@ gsap.utils.toArray(".float-img").forEach((el) => {
   });
 });
 
-// 왼쪽, 오른쪽 이미지들이 중앙으로 오면서 흐릿 -> 선명해지는 gsap
 // 스크롤 해서 그 부분이 보이면 실행
-// 같은거 반복이니까 묶는방법 있으면 묶어보기
 
 gsap.registerPlugin(ScrollTrigger);
 
-gsap.from(".sixth .left-img", {
-  scrollTrigger: {
-    trigger: ".sixth",
-    strat: "top 80%",
-    toggleActions: "play none none reset",
-  },
-  x: -200,
-  opacity: 0,
-  duration: 0.5,
-  stagger: 0.2,
-});
-
-gsap.from(".sixth .right-img", {
-  scrollTrigger: {
-    trigger: ".sixth",
-    start: "top 80%",
-    toggleActions: "play none none reset",
-  },
-  x: 200,
-  opacity: 0,
-  duration: 0.5,
-  stagger: 0.2,
-});
-
-gsap.from(".seventh .left-img", {
-  scrollTrigger: {
-    trigger: ".seventh",
-    strat: "top 80%",
-    toggleActions: "play none none reset",
-  },
-  x: -200,
-  opacity: 0,
-  duration: 1,
-  stagger: 0.2,
-});
-
-gsap.from(".seventh .right-img", {
-  scrollTrigger: {
-    trigger: ".seventh",
-    start: "top 80%",
-    toggleActions: "play none none reset",
-  },
-  x: 200,
-  opacity: 0,
-  duration: 1,
-  stagger: 0.2,
-});
-
-gsap.from(".eighth .left-img", {
-  scrollTrigger: {
-    trigger: ".eighth",
-    strat: "top 80%",
-    toggleActions: "play none none reset",
-  },
-  x: -200,
-  opacity: 0,
-  duration: 1,
-  stagger: 0.2,
-});
-
-gsap.from(".tenth .left-img", {
-  scrollTrigger: {
-    trigger: ".tenth",
-    strat: "top 80%",
-    toggleActions: "play none none reset",
-  },
-  x: -200,
-  opacity: 0,
-  duration: 1,
-  stagger: 0.2,
-});
-
-gsap.from(".tenth .right-img", {
-  scrollTrigger: {
-    trigger: ".tenth",
-    start: "top 80%",
-    toggleActions: "play none none reset",
-  },
-  x: 200,
-  opacity: 0,
-  duration: 1,
-  stagger: 0.2,
+document.querySelectorAll(".scroll-section").forEach((section) => {
+  gsap.from(section.querySelectorAll(".left-img"), {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%",
+      toggleActions: "play none none reset",
+    },
+    x: -200,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+  });
+  gsap.from(section.querySelectorAll(".right-img"), {
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%",
+      toggleActions: "play none none reset",
+    },
+    x: 200,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.2,
+  });
 });
 
 // scroll
