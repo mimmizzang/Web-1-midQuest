@@ -1,0 +1,539 @@
+/*first section*/
+
+.first {
+  margin-top: 120px;
+  background-image: url(../images/visual_bg.jpg);
+  background-position: center;
+
+  > div {
+    height: 646px;
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .title {
+    position: absolute;
+    top: 85px;
+
+    .btn {
+      @include button-style($deep-brown);
+      position: absolute;
+      top: 260px;
+      left: 170px;
+    }
+  }
+
+  .cup1 {
+    position: absolute;
+    top: 65px;
+    right: -45px;
+
+    .cup1_text {
+      position: absolute;
+      top: -30px;
+      left: -120px;
+    }
+  }
+
+  .cup2 {
+    position: absolute;
+    bottom: 0;
+    right: 160px;
+
+    .cup2_text {
+      position: absolute;
+      top: 180px;
+      left: -230px;
+    }
+  }
+
+  .spoon {
+    position: absolute;
+    bottom: 0;
+    left: 280px;
+  }
+
+  div div {
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in forwards;
+  }
+
+  .title {
+    animation-delay: 0.5s;
+  }
+  .cup1 {
+    animation-delay: 1s;
+  }
+  .cup2 {
+    animation-delay: 1.5s;
+  }
+  .spoon {
+    animation-delay: 2s;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/*second section*/
+
+.second {
+  display: flex;
+  height: 60px;
+
+  .second_left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 57%;
+    background-color: $main-black;
+    color: white;
+
+    .swiper {
+      height: 60px;
+      margin-left: 20px;
+      margin-right: 0;
+
+      .swiper-wrapper {
+        .swiper-slide {
+          height: 60px;
+          display: flex;
+          align-items: center;
+
+          a {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  .second_right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 43%;
+    background-color: #f6f5f0;
+  }
+}
+
+/*third section*/
+
+.third {
+  height: 690px;
+  background-color: #f6f5f0;
+  overflow: hidden;
+  position: relative;
+
+  .swiper {
+    width: 2477px;
+    height: 553px;
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    .swiper-wrapper {
+      .swiper-slide {
+        position: relative;
+        opacity: 0.5;
+        transition: opacity 0.5s ease-in-out;
+
+        &.swiper-slide-active {
+          opacity: 1;
+        }
+
+        .btn {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 45%;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    transition: 0.5s;
+    border: solid 2px black;
+    color: black;
+    z-index: 1;
+
+    &::after {
+      font-size: medium;
+      font-weight: bold;
+    }
+
+    &:hover {
+      color: white;
+      background-color: $main-black;
+    }
+  }
+
+  .swiper-button-prev {
+    left: 18%;
+  }
+
+  .swiper-button-next {
+    right: 18%;
+  }
+
+  .swiper-pagination.swiper-pagination-horizontal {
+    bottom: 40px;
+    z-index: 1;
+  }
+
+  .swiper-pagination {
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      background-color: transparent;
+      background-image: url(../images/promotion_slide_pager.png);
+
+      &.swiper-pagination-bullet-active {
+        background-image: url(../images/promotion_slide_pager_on.png);
+      }
+    }
+  }
+}
+
+/*fourth section*/
+
+.fourth {
+  display: flex;
+
+  .f_image {
+    width: 1100px;
+    height: 241px;
+    background-image: url(../images/rewards.jpg);
+    position: relative;
+
+    .f_btnbox {
+      width: 250px;
+      position: absolute;
+      right: 0;
+      bottom: 20px;
+      display: flex;
+      flex-wrap: wrap;
+
+      .f_signup {
+        width: 100px;
+        margin-right: 10px;
+        background-color: $main-black;
+        color: white;
+
+        &:hover {
+          background-color: transparent;
+          color: black;
+        }
+      }
+
+      .f_login {
+        width: 90px;
+      }
+
+      .f_gift {
+        width: 224px;
+        margin-top: 15px;
+      }
+    }
+  }
+
+  .f_left {
+    width: 14%;
+    height: 241px;
+    background-color: #272727;
+  }
+
+  .f_right {
+    position: relative;
+    width: 14%;
+    height: 241px;
+    background-color: #d5c798;
+  }
+}
+
+/*fifth section*/
+
+.fifth {
+  background-image: url(../images/video_cover_pattern.png);
+  height: 800px;
+
+  > div {
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    .floating1 {
+      position: absolute;
+      top: 60px;
+    }
+
+    .floating2 {
+      position: absolute;
+      top: 380px;
+      left: 150px;
+    }
+
+    .floating3 {
+      position: absolute;
+      right: 0;
+      bottom: -100px;
+    }
+  }
+}
+
+/*sixth section*/
+
+.sixth {
+  height: 400px;
+  background-image: url(../images/season_product_bg.jpg);
+
+  > div {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+
+    .s_imagebox {
+      position: absolute;
+      top: 100px;
+      right: 100px;
+
+      .s_text {
+        margin-bottom: 15px;
+      }
+    }
+  }
+}
+
+/*seventh section*/
+
+.seventh {
+  height: 400px;
+  background-image: url(../images/reserve_bg.jpg);
+
+  > div {
+    width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    position: relative;
+
+    .ss_logo {
+      position: absolute;
+      top: 100px;
+      left: 0;
+    }
+
+    .ss_imagebox {
+      position: absolute;
+      top: 120px;
+      left: 200px;
+
+      .btn {
+        @include button-style(burlywood);
+      }
+    }
+
+    .ss_image {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+}
+
+/*eighth section*/
+
+.eighth {
+  height: 700px;
+  background-image: url(../images/favorite_bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+
+  > div {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+
+    .e_imagebox {
+      width: 300px;
+      position: absolute;
+      top: 100px;
+      left: 150px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+
+      .e_text {
+        margin-bottom: 40px;
+      }
+
+      .btn {
+        @include button-style(white, transparent, black);
+      }
+    }
+  }
+}
+
+/*ninth section*/
+
+.ninth {
+  height: 600px;
+  background-image: url(../images/reserve_store_bg.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+
+  > div {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .medal {
+      width: 334px;
+      height: 334px;
+      position: relative;
+
+      .medal_front,
+      .medal_back {
+        position: absolute;
+        transition: 1s;
+        backface-visibility: hidden;
+      }
+
+      &:hover {
+        .medal_front {
+          transform: rotateY(180deg);
+        }
+        .medal_back {
+          transform: rotateY(0deg);
+        }
+      }
+
+      .medal_back {
+        transform: rotateY(-180deg);
+
+        .btn {
+          position: absolute;
+          bottom: 50px;
+          left: 100px;
+        }
+      }
+    }
+  }
+}
+
+/*tenth section*/
+
+.tenth {
+  height: 400px;
+  background-image: url(../images/find_store_bg.jpg);
+
+  > div {
+    width: 1100px;
+    height: 100%;
+    margin: 0 auto;
+    position: relative;
+
+    .t_texture1 {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .t_texture2 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+    }
+
+    .t_picture1,
+    .t_picture2 {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .t_picture1 {
+      left: 0;
+      top: -50px;
+    }
+
+    .t_picture2 {
+      left: 250px;
+      top: 150px;
+    }
+
+    .t_imagebox {
+      position: absolute;
+      top: 120px;
+      right: 170px;
+
+      .t_text {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+/*eleventh section*/
+
+.eleventh {
+  background-color: #272727;
+
+  > div {
+    width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    padding: 40px 0;
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      top: 50%;
+      border-radius: 50%;
+      background-color: transparent;
+      cursor: pointer;
+      transition: 0.5s;
+      border: 2px solid gray;
+      color: gray;
+      z-index: 1;
+
+      &::after {
+        font-size: medium;
+        font-weight: bold;
+      }
+
+      &:hover {
+        color: black;
+        background-color: gray;
+      }
+    }
+
+    .swiper-button-prev {
+      left: -10%;
+    }
+
+    .swiper-button-next {
+      right: -10%;
+    }
+  }
+}

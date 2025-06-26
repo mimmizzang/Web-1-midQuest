@@ -2,23 +2,25 @@
   margin: 0px;
   padding: 0px;
 }
+
 a {
   text-decoration: none;
 }
+
 li {
   list-style: none;
 }
+
 img {
   display: block;
 }
 
-/*btn*/
 .btn {
   width: 110px;
   padding: 10px;
-  color: rgb(54, 52, 52);
+  color: rgb(53, 52, 52);
   background-color: transparent;
-  border: solid 2px rgb(54, 52, 52);
+  border: 2px solid rgb(53, 52, 52);
   border-radius: 5px;
   font-size: 15px;
   font-weight: bold;
@@ -27,12 +29,43 @@ img {
   display: block;
 }
 .btn:hover {
-  background-color: rgb(54, 52, 52);
+  background-color: rgb(53, 52, 52);
   color: white;
   transition: 0.3s;
 }
 
-/*경계*/
+/*badge*/
+#badge_box {
+  position: fixed;
+  top: 130px;
+  right: 10px;
+  z-index: 9;
+}
+#badge_box .badge {
+  border-radius: 6%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+#badge_box .badge:last-child {
+  margin-bottom: 0;
+}
+
+/*scroll-top*/
+#scroll_top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 20%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
 
 header {
   width: 100%;
@@ -42,7 +75,6 @@ header {
   border-bottom: solid 1px #c8c8c8;
   z-index: 10;
 }
-
 header .header_box {
   display: flex;
   justify-content: space-between;
@@ -51,12 +83,10 @@ header .header_box {
   width: 1100px;
   margin: 0 auto;
 }
-
 header .logo {
   display: flex;
   align-items: center;
 }
-
 header .menu_container {
   display: flex;
   flex-direction: column;
@@ -64,7 +94,6 @@ header .menu_container {
   align-items: flex-end;
   height: 120px;
 }
-
 header .menu_container .sub_menu {
   display: flex;
   align-items: center;
@@ -73,7 +102,7 @@ header .menu_container .sub_menu {
   margin-top: 15px;
 }
 header .menu_container .sub_menu li:not(:last-child)::after {
-  content: "|"; /* 메뉴 사이 구분선 */
+  content: "|";
   margin-left: 10px;
   color: #ccc;
 }
@@ -97,121 +126,116 @@ header .menu_container .sub_menu input:focus {
   width: 180px;
   border-color: green;
 }
-
-header .main_menu {
+header .menu_container .main_menu {
   z-index: 1;
   display: flex;
 }
-header .main_menu .menu .menu_name {
+header .menu_container .main_menu .menu .menu_name {
   padding: 10px 20px 33px 20px;
   font-size: 14px;
 }
-header .main_menu .menu:hover .menu_name {
-  background-color: rgb(54, 52, 52);
+header .menu_container .main_menu .menu:hover .menu_name {
+  background-color: rgb(53, 52, 52);
   color: rgb(10, 130, 10);
   border-radius: 7px 7px 0 0;
 }
-header .main_menu .menu .menu_box {
+header .menu_container .main_menu .menu .menu_box {
   width: 100%;
   position: fixed;
   left: 0;
   display: none;
 }
-header .main_menu .menu:hover .menu_box {
-  display: block;
+header .menu_container .main_menu .menu .menu_box .box_menu {
+  background-color: rgb(53, 52, 52);
 }
-header .main_menu .menu .menu_box .box_menu {
-  background-color: rgb(54, 52, 52);
-}
-header .main_menu .menu .menu_box .box_menu > ul {
+header .menu_container .main_menu .menu .menu_box .box_menu > ul {
   width: 1100px;
   margin: 0 auto;
   display: flex;
   padding: 20px 0;
 }
-header .main_menu .menu .menu_box .box_menu > ul > li {
+header .menu_container .main_menu .menu .menu_box .box_menu > ul > li {
   width: 200px;
 }
-header .main_menu .menu .menu_box .box_menu > ul > li h5 {
+header .menu_container .main_menu .menu .menu_box .box_menu > ul > li h5 {
   padding: 5px 0 15px 0;
   color: white;
 }
-header .main_menu .menu .menu_box .box_menu > ul > li ul li {
+header .menu_container .main_menu .menu .menu_box .box_menu > ul > li ul li {
   padding: 5px 0;
   font-size: 12px;
   color: rgb(173, 167, 167);
   cursor: pointer;
 }
-header .main_menu .menu .menu_box .box_menu > ul > li ul li:hover {
+header
+  .menu_container
+  .main_menu
+  .menu
+  .menu_box
+  .box_menu
+  > ul
+  > li
+  ul
+  li:hover {
   color: rgb(10, 130, 10);
 }
-header .main_menu .menu .menu_box .box_text {
+header .menu_container .main_menu .menu .menu_box .box_text {
   padding: 25px 0;
   font-size: 12px;
-  background-image: url(./images/main_menu_pattern.jpg);
+  background-image: url(../images/main_menu_pattern.jpg);
 }
-header .main_menu .menu .menu_box .box_text > div {
+header .menu_container .main_menu .menu .menu_box .box_text > div {
   width: 1100px;
   margin: 0 auto;
 }
-header .main_menu .menu .menu_box .box_text h4 {
+header .menu_container .main_menu .menu .menu_box .box_text h4 {
   color: darkgray;
 }
-header .main_menu .menu .menu_box .box_text p {
+header .menu_container .main_menu .menu .menu_box .box_text p {
   color: rgb(10, 130, 10);
   padding: 5px 0 15px;
 }
-
-/*경계*/
-
-#badge_box {
-  position: fixed;
-  top: 130px;
-  right: 10px;
-  z-index: 9;
+header .menu_container .main_menu .menu:hover .menu_box {
+  display: block;
 }
 
-#badge_box .badge {
-  border-radius: 6%;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-  margin-bottom: 10px;
-  cursor: pointer;
-}
-#badge_box .badge:last-child {
-  margin-bottom: 0;
-}
-
-/*경계*/
-
+/*first section*/
 .first {
   margin-top: 120px;
-  background-image: url(./images/visual_bg.jpg);
+  background-image: url(../images/visual_bg.jpg);
   background-position: center;
 }
-
 .first > div {
   height: 646px;
   width: 1100px;
   margin: 0 auto;
   position: relative;
 }
-
 .first .title {
   position: absolute;
   top: 85px;
 }
 .first .title .btn {
+  width: 110px;
+  padding: 10px;
+  color: rgb(94, 30, 30);
+  background-color: transparent;
+  border: 2px solid rgb(94, 30, 30);
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  display: block;
   position: absolute;
   top: 260px;
   left: 170px;
-  color: rgb(94, 30, 30);
-  border: solid 2px rgb(94, 30, 30);
 }
 .first .title .btn:hover {
-  color: white;
   background-color: rgb(94, 30, 30);
+  color: white;
+  transition: 0.3s;
 }
-
 .first .cup1 {
   position: absolute;
   top: 65px;
@@ -222,10 +246,9 @@ header .main_menu .menu .menu_box .box_text p {
   top: -30px;
   left: -120px;
 }
-
 .first .cup2 {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   right: 160px;
 }
 .first .cup2 .cup2_text {
@@ -233,13 +256,11 @@ header .main_menu .menu .menu_box .box_text p {
   top: 180px;
   left: -230px;
 }
-
 .first .spoon {
   position: absolute;
-  bottom: 0px;
+  bottom: 0;
   left: 280px;
 }
-
 .first div div {
   opacity: 0;
   animation: fadeIn 0.5s ease-in forwards;
@@ -256,6 +277,7 @@ header .main_menu .menu .menu_box .box_text p {
 .first .spoon {
   animation-delay: 2s;
 }
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -264,29 +286,24 @@ header .main_menu .menu .menu_box .box_text p {
     opacity: 1;
   }
 }
-
-/*경계*/
-
+/*second section*/
 .second {
   display: flex;
   height: 60px;
 }
-
 .second .second_left {
   display: flex;
   align-items: center;
   justify-content: center;
   width: 57%;
-  background-color: rgb(54, 52, 52);
+  background-color: rgb(53, 52, 52);
   color: white;
 }
-
 .second .second_left .swiper {
   height: 60px;
   margin-left: 20px;
   margin-right: 0;
 }
-
 .second .second_left .swiper .swiper-wrapper .swiper-slide {
   height: 60px;
   display: flex;
@@ -295,8 +312,7 @@ header .main_menu .menu .menu_box .box_text p {
 .second .second_left .swiper .swiper-wrapper .swiper-slide a {
   color: white;
 }
-
-.second_right {
+.second .second_right {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -304,15 +320,13 @@ header .main_menu .menu .menu_box .box_text p {
   background-color: #f6f5f0;
 }
 
-/*경계*/
-
+/*third section*/
 .third {
   height: 690px;
   background-color: #f6f5f0;
   overflow: hidden;
   position: relative;
 }
-
 .third .swiper {
   width: 2477px;
   height: 553px;
@@ -321,13 +335,12 @@ header .main_menu .menu .menu_box .box_text p {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .third .swiper .swiper-wrapper .swiper-slide {
   position: relative;
   opacity: 0.5;
   transition: opacity 0.5s ease-in-out;
 }
-.third .swiper .swiper-wrapper .swiper-slide-active {
+.third .swiper .swiper-wrapper .swiper-slide.swiper-slide-active {
   opacity: 1;
 }
 .third .swiper .swiper-wrapper .swiper-slide .btn {
@@ -336,7 +349,6 @@ header .main_menu .menu .menu_box .box_text p {
   left: 50%;
   transform: translateX(-50%);
 }
-
 .third .swiper-button-prev,
 .third .swiper-button-next {
   width: 40px;
@@ -359,7 +371,7 @@ header .main_menu .menu .menu_box .box_text p {
 .third .swiper-button-prev:hover,
 .third .swiper-button-next:hover {
   color: white;
-  background-color: rgb(54, 52, 52);
+  background-color: rgb(53, 52, 52);
 }
 .third .swiper-button-prev {
   left: 18%;
@@ -367,7 +379,6 @@ header .main_menu .menu .menu_box .box_text p {
 .third .swiper-button-next {
   right: 18%;
 }
-
 .third .swiper-pagination.swiper-pagination-horizontal {
   bottom: 40px;
   z-index: 1;
@@ -376,22 +387,22 @@ header .main_menu .menu .menu_box .box_text p {
   width: 12px;
   height: 12px;
   background-color: transparent;
-  background-image: url(./images/promotion_slide_pager.png);
+  background-image: url(../images/promotion_slide_pager.png);
 }
-.third .swiper-pagination .swiper-pagination-bullet-active {
-  background-image: url(./images/promotion_slide_pager_on.png);
+.third
+  .swiper-pagination
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-image: url(../images/promotion_slide_pager_on.png);
 }
 
-/*경계*/
-
+/*fourth section*/
 .fourth {
   display: flex;
 }
-
 .fourth .f_image {
   width: 1100px;
   height: 241px;
-  background-image: url(./images/rewards.jpg);
+  background-image: url(../images/rewards.jpg);
   position: relative;
 }
 .fourth .f_image .f_btnbox {
@@ -402,33 +413,28 @@ header .main_menu .menu .menu_box .box_text p {
   display: flex;
   flex-wrap: wrap;
 }
-
 .fourth .f_image .f_btnbox .f_signup {
   width: 100px;
   margin-right: 10px;
-  background-color: rgb(54, 52, 52);
+  background-color: rgb(53, 52, 52);
   color: white;
 }
 .fourth .f_image .f_btnbox .f_signup:hover {
   background-color: transparent;
   color: black;
 }
-
 .fourth .f_image .f_btnbox .f_login {
   width: 90px;
 }
-
 .fourth .f_image .f_btnbox .f_gift {
   width: 224px;
   margin-top: 15px;
 }
-
 .fourth .f_left {
   width: 14%;
   height: 241px;
   background-color: #272727;
 }
-
 .fourth .f_right {
   position: relative;
   width: 14%;
@@ -436,117 +442,110 @@ header .main_menu .menu .menu_box .box_text p {
   background-color: #d5c798;
 }
 
-/*경계*/
-
+/*fifth section*/
 .fifth {
-  background-image: url(./images/video_cover_pattern.png);
+  background-image: url(../images/video_cover_pattern.png);
   height: 800px;
 }
-
 .fifth > div {
   width: 1100px;
   height: 100%;
   margin: 0 auto;
   position: relative;
 }
-
-.fifth .floating1 {
+.fifth > div .floating1 {
   position: absolute;
   top: 60px;
 }
-
-.fifth .floating2 {
+.fifth > div .floating2 {
   position: absolute;
   top: 380px;
   left: 150px;
 }
-
-.fifth .floating3 {
+.fifth > div .floating3 {
   position: absolute;
   right: 0;
   bottom: -100px;
 }
 
-/*경계*/
-
+/*sixth section*/
 .sixth {
   height: 400px;
-  background-image: url(./images/season_product_bg.jpg);
+  background-image: url(../images/season_product_bg.jpg);
 }
-
 .sixth > div {
   width: 1100px;
   margin: 0 auto;
   display: flex;
   position: relative;
 }
-
-.sixth .s_imagebox {
+.sixth > div .s_imagebox {
   position: absolute;
   top: 100px;
   right: 100px;
 }
-
-.sixth .s_imagebox .s_text {
+.sixth > div .s_imagebox .s_text {
   margin-bottom: 15px;
 }
 
-/*경계*/
-
+/*seventh section*/
 .seventh {
   height: 400px;
-  background-image: url(./images/reserve_bg.jpg);
+  background-image: url(../images/reserve_bg.jpg);
 }
-
 .seventh > div {
   width: 1100px;
   margin: 0 auto;
   display: flex;
   position: relative;
 }
-
-.seventh .ss_logo {
+.seventh > div .ss_logo {
   position: absolute;
   top: 100px;
   left: 0;
 }
-
-.seventh .ss_imagebox {
+.seventh > div .ss_imagebox {
   position: absolute;
   top: 120px;
   left: 200px;
 }
-.seventh .ss_imagebox .btn {
+.seventh > div .ss_imagebox .btn {
+  width: 110px;
+  padding: 10px;
   color: burlywood;
-  border: solid 2px burlywood;
+  background-color: transparent;
+  border: 2px solid burlywood;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  display: block;
 }
-.seventh .ss_imagebox .btn:hover {
+.seventh > div .ss_imagebox .btn:hover {
   background-color: burlywood;
   color: white;
+  transition: 0.3s;
 }
-
-.seventh .ss_image {
+.seventh > div .ss_image {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-/*경계*/
-
+/*eighth section*/
 .eighth {
   height: 700px;
-  background-image: url(./images/favorite_bg.jpg);
+  background-image: url(../images/favorite_bg.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
-
 .eighth > div {
   width: 1100px;
   margin: 0 auto;
   position: relative;
 }
-
-.eighth .e_imagebox {
+.eighth > div .e_imagebox {
   width: 300px;
   position: absolute;
   top: 100px;
@@ -555,132 +554,122 @@ header .main_menu .menu .menu_box .box_text p {
   flex-wrap: wrap;
   justify-content: flex-end;
 }
-
-.eighth .e_imagebox .e_text {
+.eighth > div .e_imagebox .e_text {
   margin-bottom: 40px;
 }
-
-.eighth .btn {
+.eighth > div .e_imagebox .btn {
+  width: 110px;
+  padding: 10px;
   color: white;
-  border: solid 2px white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  display: block;
 }
-.eighth .btn:hover {
+.eighth > div .e_imagebox .btn:hover {
   background-color: white;
   color: black;
+  transition: 0.3s;
 }
 
-/*경계*/
-
+/*ninth section*/
 .ninth {
   height: 600px;
-  background-image: url(./images/reserve_store_bg.jpg);
+  background-image: url(../images/reserve_store_bg.jpg);
   background-attachment: fixed;
   background-size: cover;
 }
-
 .ninth > div {
-  height: 600px;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
-.ninth .medal {
+.ninth > div .medal {
   width: 334px;
   height: 334px;
   position: relative;
 }
-
-.ninth .medal .medal_front,
-.ninth .medal .medal_back {
+.ninth > div .medal .medal_front,
+.ninth > div .medal .medal_back {
   position: absolute;
   transition: 1s;
-  backface-visibility: hidden; /*뒷면이 사용자를 향할 때 보여야 하는지 지정*/
+  backface-visibility: hidden;
 }
-
-.ninth .medal:hover .medal_front {
+.ninth > div .medal:hover .medal_front {
   transform: rotateY(180deg);
 }
-
-.ninth .medal .medal_back {
-  transform: rotateY(-180deg);
-}
-
-.ninth .medal:hover .medal_back {
+.ninth > div .medal:hover .medal_back {
   transform: rotateY(0deg);
 }
-
-.ninth .medal .medal_back .btn {
+.ninth > div .medal .medal_back {
+  transform: rotateY(-180deg);
+}
+.ninth > div .medal .medal_back .btn {
   position: absolute;
   bottom: 50px;
   left: 100px;
 }
 
-/*경계*/
-
+/*tenth section*/
 .tenth {
   height: 400px;
-  background-image: url(./images/find_store_bg.jpg);
+  background-image: url(../images/find_store_bg.jpg);
 }
-
 .tenth > div {
   width: 1100px;
-  height: 400px;
+  height: 100%;
   margin: 0 auto;
   position: relative;
 }
-
-.tenth .t_texture1 {
+.tenth > div .t_texture1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
-
-.tenth .t_texture2 {
+.tenth > div .t_texture2 {
   position: absolute;
   bottom: 0;
   right: 0;
 }
-
-.tenth .t_picture1 {
+.tenth > div .t_picture1,
+.tenth > div .t_picture2 {
   position: absolute;
+  border-radius: 50%;
+}
+.tenth > div .t_picture1 {
   left: 0;
   top: -50px;
-  border-radius: 50%;
 }
-
-.tenth .t_picture2 {
-  position: absolute;
+.tenth > div .t_picture2 {
   left: 250px;
   top: 150px;
-  border-radius: 50%;
 }
-
-.tenth .t_imagebox {
+.tenth > div .t_imagebox {
   position: absolute;
   top: 120px;
   right: 170px;
 }
-
-.tenth .t_imagebox .t_text {
+.tenth > div .t_imagebox .t_text {
   margin-bottom: 20px;
 }
 
-/*경계*/
-
+/*eleventh section*/
 .eleventh {
   background-color: #272727;
 }
-
 .eleventh > div {
   width: 1100px;
   margin: 0 auto;
   position: relative;
   padding: 40px 0;
 }
-
-.eleventh .swiper-button-prev,
-.eleventh .swiper-button-next {
+.eleventh > div .swiper-button-prev,
+.eleventh > div .swiper-button-next {
   width: 40px;
   height: 40px;
   position: absolute;
@@ -693,49 +682,45 @@ header .main_menu .menu .menu_box .box_text p {
   color: gray;
   z-index: 1;
 }
-.eleventh .swiper-button-prev::after,
-.eleventh .swiper-button-next::after {
+.eleventh > div .swiper-button-prev::after,
+.eleventh > div .swiper-button-next::after {
   font-size: medium;
   font-weight: bold;
 }
-.eleventh .swiper-button-prev:hover,
-.eleventh .swiper-button-next:hover {
+.eleventh > div .swiper-button-prev:hover,
+.eleventh > div .swiper-button-next:hover {
   color: black;
   background-color: gray;
 }
-.eleventh .swiper-button-prev {
+.eleventh > div .swiper-button-prev {
   left: -10%;
 }
-.eleventh .swiper-button-next {
+.eleventh > div .swiper-button-next {
   right: -10%;
 }
-
-/*경계*/
 
 footer {
   background-color: #272727;
   border-top: 1px solid rgb(81, 81, 81);
 }
-
 footer > div {
   width: 1100px;
   margin: 0 auto;
   position: relative;
   padding: 50px 0;
 }
-
-footer .footer_menu {
+footer > div .footer_menu {
   display: flex;
   justify-content: center;
   gap: 25px;
   font-size: 12px;
   font-weight: bold;
 }
-footer .footer_menu li {
+footer > div .footer_menu li {
   position: relative;
 }
-footer .footer_menu li:not(:last-child)::after {
-  content: ""; /* 메뉴 사이 구분선 */
+footer > div .footer_menu li:not(:last-child)::after {
+  content: "";
   background-color: gray;
   position: absolute;
   top: 6px;
@@ -743,68 +728,57 @@ footer .footer_menu li:not(:last-child)::after {
   width: 2px;
   height: 2px;
 }
-footer .footer_menu li a {
+footer > div .footer_menu li a {
   color: #ccc;
 }
-footer .footer_menu li .footer_g {
+footer > div .footer_menu li .footer_g {
   color: green;
 }
-
-footer .footer_btnbox {
+footer > div .footer_btnbox {
   display: flex;
   justify-content: center;
   margin-top: 35px;
   gap: 10px;
 }
-footer .footer_btnbox .btn {
+footer > div .footer_btnbox .btn {
+  width: 110px;
+  padding: 10px;
   color: white;
-  border: solid 2px white;
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  display: block;
   font-size: 12px;
 }
-footer .footer_btnbox .btn:hover {
+footer > div .footer_btnbox .btn:hover {
   background-color: white;
   color: black;
+  transition: 0.3s;
 }
-
-footer .footer_text1 {
+footer > div .footer_text1 {
   margin-top: 30px;
   text-align: center;
 }
-footer .footer_text1 span {
+footer > div .footer_text1 span {
   font-size: 12px;
   color: gray;
   margin-right: 25px;
 }
-footer .footer_text1 span:last-child {
+footer > div .footer_text1 span:last-child {
   margin-right: 0;
 }
-
-footer .footer_text2 {
+footer > div .footer_text2 {
   margin-top: 15px;
   text-align: center;
 }
-footer .footer_text2 span {
+footer > div .footer_text2 span {
   font-size: 12px;
   color: gray;
 }
-
-footer .footer_img {
+footer > div .footer_img {
   margin: 30px auto 0;
-}
-
-/*경계*/
-
-#scroll_top {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  width: 50px;
-  height: 50px;
-  background-color: black;
-  color: white;
-  border: 2px solid white;
-  border-radius: 20%;
-  font-size: 20px;
-  cursor: pointer;
-  z-index: 10;
-}
+} /*# sourceMappingURL=main.css.map */

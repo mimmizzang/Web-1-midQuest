@@ -1,0 +1,36 @@
+/*badge*/
+
+#badge_box {
+  position: fixed;
+  top: 130px;
+  right: 10px;
+  z-index: 9;
+
+  .badge {
+    border-radius: 6%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    margin-bottom: 10px;
+    cursor: pointer;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+/*scroll-top*/
+
+#scroll_top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+  border-radius: 20%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+}
